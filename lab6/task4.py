@@ -1,11 +1,19 @@
 n = int(input())
+
 if n < 0:
     print('Ошибка')
-    exit()
-digits = 0
-sum = 0
-for digit in str(n):
-    digits += 1
-    sum += int(digit)
-print(f'Цифр: {digits}')
-print(f'Сумма цифр: {sum}')
+else:
+    digits = 0
+    digit_sum = 0
+    if n == 0:
+        digits = 1
+        digit_sum = 0
+    else:
+        while n > 0:
+            digit = n % 10
+            digit_sum += digit
+            digits += 1
+            n = n // 10
+
+    print(f'Цифр: {digits}')
+    print(f'Сумма цифр: {digit_sum}')
